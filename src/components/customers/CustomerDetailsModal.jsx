@@ -117,9 +117,9 @@ export const CustomerDetailsModal = () => {
                 setSelectedCustomer(null);
                 openAddPaymentForCustomer(cust);
               }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-full text-xs shadow-xs transition-all active:scale-[0.98]"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full text-xs shadow-[0_4px_14px_rgba(16,185,129,0.35)] transition-all active:scale-[0.98]"
             >
-              <Receipt className="w-4 h-4" />
+              <Receipt className="w-4 h-4 text-white" />
               Record Payment
             </button>
             <button

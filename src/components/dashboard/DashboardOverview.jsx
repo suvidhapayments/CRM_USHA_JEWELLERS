@@ -64,9 +64,9 @@ export const DashboardOverview = () => {
 
               <button
                 onClick={() => setIsAddPaymentOpen(true)}
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-full text-xs sm:text-sm shadow-sm transition-all active:scale-[0.98]"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full text-xs sm:text-sm shadow-[0_4px_14px_rgba(16,185,129,0.35)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.45)] transition-all active:scale-[0.98]"
               >
-                <Receipt className="w-4 h-4 text-brand-300" />
+                <Receipt className="w-4 h-4 text-white" />
                 Record Payment
               </button>
 
