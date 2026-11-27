@@ -29,8 +29,8 @@ export const DashboardOverview = () => {
 
   return (
     <div className="space-y-6 sm:space-y-8">
-      {/* Hero Welcome Banner with Modern Illustration */}
-      <div className="relative overflow-hidden bg-white border border-[#F1F4F9] p-6 sm:p-8 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      {/* Hero Welcome Banner with Modern Illustration & Glass Effect */}
+      <div className="relative overflow-hidden glass-card p-6 sm:p-8 rounded-3xl">
         {/* Subtle decorative glowing background blur */}
         <div className="absolute -top-12 -right-12 w-56 h-56 bg-brand-100/50 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-12 -left-12 w-56 h-56 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />

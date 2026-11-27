@@ -69,25 +69,25 @@ export const PaymentList = () => {
     <div className="space-y-6">
       {/* Collections KPI Bar */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <p className="text-xs uppercase font-bold text-slate-400">Total Collections</p>
           <p className="text-2xl font-extrabold text-emerald-600 mt-1">{formatCurrency(totalCollections)}</p>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">{payments.length} payment transactions</p>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <p className="text-xs uppercase font-bold text-slate-400">UPI / QR Collections</p>
           <p className="text-2xl font-extrabold text-navy-950 mt-1">{formatCurrency(upiTotal)}</p>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">PhonePe, GPay, Paytm</p>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <p className="text-xs uppercase font-bold text-slate-400">Cash at Counter</p>
           <p className="text-2xl font-extrabold text-amber-700 mt-1">{formatCurrency(cashTotal)}</p>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">Physical cash drawer</p>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <p className="text-xs uppercase font-bold text-slate-400">Cards & Bank Transfer</p>
           <p className="text-2xl font-extrabold text-[#1E65FF] mt-1">{formatCurrency(bankCardTotal)}</p>
           <p className="text-xs text-slate-500 mt-0.5 font-medium">NEFT, RTGS, POS Swipe</p>
@@ -95,7 +95,7 @@ export const PaymentList = () => {
       </div>
 
       {/* Action Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white p-4 sm:p-5 rounded-3xl border border-[#F1F4F9] shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 glass-card p-4 sm:p-5 rounded-3xl">
         <div className="relative flex-1">
           <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
           <input
@@ -103,12 +103,12 @@ export const PaymentList = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by Receipt (e.g. RCP-2026-001), Customer, UTR reference..."
-            className="w-full bg-[#F4F6FB] border border-slate-200/70 rounded-full pl-10 pr-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-[#1E65FF] focus:bg-white font-medium"
+            className="w-full glass-pill rounded-full pl-10 pr-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-[#1E65FF] focus:bg-white font-medium"
           />
         </div>
 
         {/* Mode Filter */}
-        <div className="flex items-center gap-1.5 bg-[#F4F6FB] p-1 rounded-full border border-slate-200/70 text-xs overflow-x-auto">
+        <div className="flex items-center gap-1.5 glass-pill p-1 rounded-full text-xs overflow-x-auto">
           <button
             onClick={() => setModeFilter('all')}
             className={`px-4 py-1.5 rounded-full font-bold whitespace-nowrap transition-all ${
@@ -171,7 +171,7 @@ export const PaymentList = () => {
       </div>
 
       {/* Payment Receipts Table */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="glass-card rounded-3xl overflow-hidden">
         {filteredPayments.length === 0 ? (
           <div className="p-10 sm:p-12 text-center">
             <EmptyStateIllustration type="payments" className="w-36 h-36 mx-auto mb-2" />

@@ -37,7 +37,7 @@ export const GoldRateTicker = () => {
 
   return (
     <>
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-4 sm:p-5 shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="glass-card rounded-3xl p-4 sm:p-5">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center justify-between w-full md:w-auto">
             <div className="flex items-center gap-3">

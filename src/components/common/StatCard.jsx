@@ -44,7 +44,7 @@ export const StatCard = ({
   return (
     <div
       onClick={onClick}
-      className={`group relative bg-white border border-[#F1F4F9] rounded-3xl p-4 sm:p-5 shadow-[0_8px_30px_rgba(7,1,39,0.04)] transition-all duration-200 hover:shadow-[0_14px_34px_rgba(7,1,39,0.08)] ${style.border} ${
+      className={`group relative glass-card rounded-3xl p-4 sm:p-5 ${style.border} ${
         onClick ? 'cursor-pointer hover:-translate-y-1' : ''
       }`}
     >

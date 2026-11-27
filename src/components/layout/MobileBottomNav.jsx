@@ -39,7 +39,7 @@ export const MobileBottomNav = ({ onOpenMenu }) => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-100 px-3 py-2 flex items-center justify-around lg:hidden shadow-[0_-4px_20px_rgba(7,1,39,0.05)] no-print">
+    <div className="fixed bottom-0 left-0 right-0 z-40 glass-dock px-3 py-2 flex items-center justify-around lg:hidden no-print">
       {tabs.map((tab) => {
         const Icon = tab.icon;
         const isActive = activeTab === tab.id;

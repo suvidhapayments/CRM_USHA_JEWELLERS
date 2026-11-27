@@ -75,9 +75,9 @@ export const Sidebar = ({ isMobileOpen, onCloseMobile }) => {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed lg:sticky top-0 left-0 h-screen w-64 bg-white border-r border-slate-100 flex flex-col justify-between z-40 transition-transform duration-200 ease-in-out lg:translate-x-0 ${
+        className={`fixed lg:sticky top-0 left-0 h-screen w-64 glass-sidebar flex flex-col justify-between z-40 transition-transform duration-200 ease-in-out lg:translate-x-0 ${
           isMobileOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
-        } no-print shadow-[4px_0_24px_rgba(7,1,39,0.02)]`}
+        } no-print`}
       >
         <div className="flex flex-col h-full overflow-y-auto">
           {/* Logo & Header */}

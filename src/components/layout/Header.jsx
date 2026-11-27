@@ -19,7 +19,7 @@ export const Header = ({ onOpenMobileMenu }) => {
   } = useApp();
 
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 px-3 sm:px-6 py-2.5 sm:py-3 shadow-[0_2px_15px_-3px_rgba(7,1,39,0.03)] no-print">
+    <header className="sticky top-0 z-30 glass-header px-3 sm:px-6 py-2.5 sm:py-3 no-print">
       <div className="flex items-center justify-between gap-2 sm:gap-4 max-w-7xl mx-auto">
         {/* Left: Mobile Menu Toggle & Brand */}
         <div className="flex items-center gap-2 sm:gap-3">
@@ -63,7 +63,7 @@ export const Header = ({ onOpenMobileMenu }) => {
                 if (e.target.value.trim()) setActiveTab('customers');
               }}
               placeholder="Search customer, mobile, invoice number..."
-              className="w-full bg-[#F4F6FB] border border-slate-200/70 rounded-full pl-10 pr-4 py-2 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-[#1E65FF] focus:bg-white focus:ring-2 focus:ring-brand-100 transition-all font-medium"
+              className="w-full glass-pill rounded-full pl-10 pr-4 py-2 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-[#1E65FF] focus:bg-white transition-all font-medium"
             />
           </div>
         </div>

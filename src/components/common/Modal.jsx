@@ -28,11 +28,11 @@ export const Modal = ({ isOpen, onClose, title, subtitle, children, maxWidth = '
 
       {/* Modal Dialog */}
       <div 
-        className={`relative w-full ${maxWidth} bg-white border border-[#F1F4F9] rounded-3xl shadow-[0_20px_60px_-15px_rgba(7,1,39,0.25)] overflow-hidden z-10 animate-in zoom-in-95 duration-150 my-6`}
+        className={`relative w-full ${maxWidth} glass-modal rounded-3xl overflow-hidden z-10 animate-in zoom-in-95 duration-150 my-6`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-start justify-between p-5 sm:p-6 border-b border-slate-100 bg-[#FBFBFD]">
+        <div className="flex items-start justify-between p-5 sm:p-6 border-b border-white/60 bg-white/40 backdrop-blur-md">
           <div>
             <h3 className="text-lg sm:text-xl font-extrabold text-navy-950 flex items-center gap-2 tracking-tight">
               {title}

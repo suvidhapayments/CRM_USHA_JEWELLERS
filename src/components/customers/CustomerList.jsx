@@ -95,7 +95,7 @@ export const CustomerList = () => {
     <div className="space-y-6">
       {/* Top Banner & KPI Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex items-center justify-between">
+        <div className="glass-card p-5 rounded-3xl flex items-center justify-between">
           <div>
             <p className="text-xs uppercase font-bold text-slate-400">Total Registered</p>
             <p className="text-2xl font-extrabold text-navy-950 mt-1">{totalCustomersCount}</p>
@@ -106,7 +106,7 @@ export const CustomerList = () => {
           </div>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex items-center justify-between">
+        <div className="glass-card p-5 rounded-3xl flex items-center justify-between">
           <div>
             <p className="text-xs uppercase font-bold text-slate-400">Pending Installments</p>
             <p className="text-2xl font-extrabold text-rose-600 mt-1">{formatCurrency(totalOutstandingSum)}</p>
@@ -117,7 +117,7 @@ export const CustomerList = () => {
           </div>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex items-center justify-between">
+        <div className="glass-card p-5 rounded-3xl flex items-center justify-between">
           <div>
             <p className="text-xs uppercase font-bold text-slate-400">Lifetime Purchases</p>
             <p className="text-2xl font-extrabold text-[#1E65FF] mt-1">{formatCurrency(totalPurchasesSum)}</p>
@@ -130,7 +130,7 @@ export const CustomerList = () => {
       </div>
 
       {/* Action Bar (Search, Filters, New Customer) */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white p-4 sm:p-5 rounded-3xl border border-[#F1F4F9] shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 glass-card p-4 sm:p-5 rounded-3xl">
         {/* Search */}
         <div className="relative flex-1">
           <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
@@ -249,7 +249,7 @@ export const CustomerList = () => {
             return (
               <div
                 key={cust.id}
-                className="bg-white border border-[#F1F4F9] hover:border-brand-300 rounded-3xl p-5 shadow-[0_8px_30px_rgba(7,1,39,0.04)] hover:shadow-[0_14px_34px_rgba(7,1,39,0.08)] transition-all duration-200 flex flex-col justify-between group"
+                className="glass-card hover:border-brand-300 rounded-3xl p-5 transition-all duration-200 flex flex-col justify-between group"
               >
                 <div>
                   {/* Card Header */}
@@ -359,7 +359,7 @@ export const CustomerList = () => {
         </div>
       ) : (
         /* High Density Table View */
-        <div className="bg-white border border-[#F1F4F9] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card rounded-3xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>

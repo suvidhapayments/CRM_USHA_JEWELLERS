@@ -81,7 +81,7 @@ export const ReportsView = () => {
   return (
     <div className="space-y-6">
       {/* Header & Date Range Filter */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border border-[#F1F4F9] p-5 sm:p-6 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 glass-card p-5 sm:p-6 rounded-3xl">
         <div>
           <h2 className="text-xl sm:text-2xl font-extrabold text-navy-950 flex items-center gap-2 tracking-tight">
             <FileBarChart2 className="w-6 h-6 text-[#1E65FF]" />
@@ -92,7 +92,7 @@ export const ReportsView = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5 bg-[#F4F6FB] p-1 rounded-full border border-slate-200/70 text-xs">
+        <div className="flex items-center gap-1.5 glass-pill p-1 rounded-full text-xs">
           <button
             onClick={() => setDateRange('all')}
             className={`px-4 py-1.5 rounded-full font-bold transition-all ${
@@ -122,25 +122,25 @@ export const ReportsView = () => {
 
       {/* Key Metric Blocks */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <span className="text-xs font-bold uppercase text-slate-400">Total Billed</span>
           <p className="text-2xl font-extrabold text-navy-950 mt-1">{formatCurrency(totalSalesVal)}</p>
           <span className="text-xs text-slate-500 mt-0.5 block font-medium">{filteredSales.length} total bills</span>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <span className="text-xs font-bold uppercase text-slate-400">Gold Weight Sold</span>
           <p className="text-2xl font-extrabold text-amber-700 mt-1">{formatWeight(totalGoldWeight)}</p>
           <span className="text-xs text-slate-500 mt-0.5 block font-medium">Net Hallmarked Gold</span>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <span className="text-xs font-bold uppercase text-slate-400">Collections</span>
           <p className="text-2xl font-extrabold text-emerald-600 mt-1">{formatCurrency(totalPaidVal)}</p>
           <span className="text-xs text-emerald-600 mt-0.5 block font-medium">Realized revenue</span>
         </div>
 
-        <div className="bg-white border border-[#F1F4F9] p-5 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        <div className="glass-card p-5 rounded-3xl">
           <span className="text-xs font-bold uppercase text-slate-400">Avg Ticket Size</span>
           <p className="text-2xl font-extrabold text-[#1E65FF] mt-1">{formatCurrency(avgBillSize)}</p>
           <span className="text-xs text-slate-500 mt-0.5 block font-medium">Per invoice average</span>
@@ -148,7 +148,7 @@ export const ReportsView = () => {
       </div>
 
       {/* Outstanding Aging Ledger (Debtors Table) */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="glass-card rounded-3xl p-6 sm:p-7">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
           <div>
             <h3 className="text-base sm:text-lg font-extrabold text-navy-950 flex items-center gap-2 tracking-tight">
@@ -244,14 +244,14 @@ export const ReportsView = () => {
       </div>
 
       {/* Jewellery Categories Distribution */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+      <div className="glass-card rounded-3xl p-6 sm:p-7">
         <h3 className="text-base sm:text-lg font-extrabold text-navy-950 flex items-center gap-2 tracking-tight mb-4">
           <Sparkles className="w-5 h-5 text-amber-600" />
           Category-Wise Jewellery Breakdown
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
           {categoryList.map((cat) => (
-            <div key={cat.name} className="p-4 rounded-2xl bg-[#F8FAFC] border border-slate-200/60 text-center">
+            <div key={cat.name} className="p-4 rounded-2xl glass-pill text-center">
               <span className="text-xs font-bold text-navy-950 block truncate">{cat.name}</span>
               <p className="text-base font-extrabold text-[#1E65FF] mt-1">{cat.count} pcs</p>
               <p className="text-[11px] font-mono text-slate-500 mt-0.5">{formatWeight(cat.weight)}</p>

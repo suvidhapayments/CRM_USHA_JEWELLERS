@@ -24,7 +24,7 @@ export const RecentActivity = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* 1. Recent Sales Transactions */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
+      <div className="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between mb-5">
             <div>
@@ -103,7 +103,7 @@ export const RecentActivity = () => {
       </div>
 
       {/* 2. Recent Payments & Collections */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
+      <div className="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between mb-5">
             <div>

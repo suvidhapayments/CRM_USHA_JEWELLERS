@@ -61,7 +61,7 @@ export const SalesCharts = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Monthly Report: Spline Curve Chart matching Image 1 & 3 */}
-      <div className="lg:col-span-2 bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
+      <div className="lg:col-span-2 glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
           <div>
             <div className="flex items-center gap-2">
@@ -140,7 +140,7 @@ export const SalesCharts = () => {
       </div>
 
       {/* Sales Stat: Donut Chart matching Image 1 & 3 */}
-      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
+      <div className="glass-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-base sm:text-lg font-extrabold text-navy-950 tracking-tight">
