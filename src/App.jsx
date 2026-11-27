@@ -16,13 +16,17 @@ import { PaymentReceiptModal } from './components/payments/PaymentReceiptModal';
 import { ReportsView } from './components/reports/ReportsView';
 import { SupabaseConfigModal } from './components/settings/SupabaseConfigModal';
 import { Toast } from './components/common/Toast';
+import { JewelleryBackground } from './components/layout/JewelleryBackground';
 
 const MainContent = () => {
   const { activeTab, loading } = useApp();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#FBFBFD] text-navy-950 font-sans">
+    <div className="flex min-h-screen bg-transparent text-navy-950 font-sans relative overflow-x-hidden">
+      {/* Background Animated Jewellery Artifacts & Filigree Watermark */}
+      <JewelleryBackground />
+
       {/* Sidebar Navigation */}
       <Sidebar
         isMobileOpen={isMobileMenuOpen}
@@ -30,7 +34,7 @@ const MainContent = () => {
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 relative z-10">
         <Header onOpenMobileMenu={() => setIsMobileMenuOpen(true)} />
 
         <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-24 lg:pb-8">
