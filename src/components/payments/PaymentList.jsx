@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../context/AppContext';
 import { formatCurrency, formatDate } from '../../utils/formatters';
+import { EmptyStateIllustration } from '../illustrations/EmptyStateIllustration';
 import {
   Receipt,
   PlusCircle,
@@ -172,8 +173,8 @@ export const PaymentList = () => {
       {/* Payment Receipts Table */}
       <div className="bg-white border border-[#F1F4F9] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
         {filteredPayments.length === 0 ? (
-          <div className="p-12 text-center">
-            <Receipt className="w-12 h-12 mx-auto text-slate-300 mb-3" />
+          <div className="p-10 sm:p-12 text-center">
+            <EmptyStateIllustration type="payments" className="w-36 h-36 mx-auto mb-2" />
             <h3 className="text-lg font-extrabold text-navy-950">No payments found</h3>
             <p className="text-sm text-slate-500 mt-1 font-medium">Record a customer installment or counter collection.</p>
           </div>

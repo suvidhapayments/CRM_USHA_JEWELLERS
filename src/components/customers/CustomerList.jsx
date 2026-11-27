@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Badge } from '../common/Badge';
+import { EmptyStateIllustration } from '../illustrations/EmptyStateIllustration';
 import {
   formatCurrency,
   formatMobile,
@@ -224,8 +225,8 @@ export const CustomerList = () => {
 
       {/* Customer List Content */}
       {filteredCustomers.length === 0 ? (
-        <div className="bg-white border border-[#F1F4F9] rounded-3xl p-12 text-center shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
-          <User className="w-12 h-12 mx-auto text-slate-300 mb-3" />
+        <div className="bg-white border border-[#F1F4F9] rounded-3xl p-10 sm:p-12 text-center shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+          <EmptyStateIllustration type="customers" className="w-36 h-36 mx-auto mb-2" />
           <h3 className="text-lg font-extrabold text-navy-950">No customers found</h3>
           <p className="text-sm text-slate-500 mt-1 max-w-md mx-auto font-medium">
             {searchQuery
@@ -234,7 +235,7 @@ export const CustomerList = () => {
           </p>
           <button
             onClick={() => { setSearchQuery(''); setIsNewCustomerOpen(true); }}
-            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#1E65FF] hover:bg-[#1554E8] text-white font-bold rounded-full text-xs shadow-xs transition-colors"
+            className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 bg-[#1E65FF] hover:bg-[#1554E8] text-white font-bold rounded-full text-xs shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-all"
           >
             <UserPlus className="w-4 h-4" />
             Add New Customer

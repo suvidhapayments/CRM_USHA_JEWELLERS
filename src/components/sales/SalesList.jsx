@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Badge } from '../common/Badge';
+import { EmptyStateIllustration } from '../illustrations/EmptyStateIllustration';
 import {
   formatCurrency,
   formatDate,
@@ -173,8 +174,8 @@ export const SalesList = () => {
       {/* Sales Invoices Table */}
       <div className="bg-white border border-[#F1F4F9] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
         {filteredSales.length === 0 ? (
-          <div className="p-12 text-center">
-            <FileText className="w-12 h-12 mx-auto text-slate-300 mb-3" />
+          <div className="p-10 sm:p-12 text-center">
+            <EmptyStateIllustration type="sales" className="w-36 h-36 mx-auto mb-2" />
             <h3 className="text-lg font-extrabold text-navy-950">No sales invoices found</h3>
             <p className="text-sm text-slate-500 mt-1 font-medium">Try another search keyword or generate a new jewellery invoice.</p>
           </div>
