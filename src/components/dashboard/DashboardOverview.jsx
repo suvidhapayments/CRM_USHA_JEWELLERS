@@ -8,8 +8,9 @@ import {
   PlusCircle,
   UserPlus,
   Receipt,
-  ShieldCheck,
-  Calendar
+  Sparkles,
+  Calendar,
+  ArrowRight
 } from 'lucide-react';
 
 export const DashboardOverview = () => {
@@ -27,49 +28,56 @@ export const DashboardOverview = () => {
   }).format(new Date());
 
   return (
-    <div className="space-y-6">
-      {/* Welcome Banner & Quick Action Buttons */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-white border border-slate-200/90 p-5 rounded-2xl shadow-xs">
-        <div>
-          <div className="flex items-center gap-2">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-              Usha Jewellers CRM Dashboard
+    <div className="space-y-6 sm:space-y-8">
+      {/* Hero Welcome Banner */}
+      <div className="relative overflow-hidden bg-white border border-[#F1F4F9] p-6 sm:p-8 rounded-3xl shadow-[0_8px_30px_rgba(7,1,39,0.04)]">
+        {/* Subtle decorative glowing background blur */}
+        <div className="absolute -top-12 -right-12 w-48 h-48 bg-brand-100/60 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-amber-100/50 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-[#1E65FF] border border-brand-200/60 text-xs font-bold mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Smart Jewellery Retail CRM</span>
+            </div>
+            
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-950 tracking-tight leading-tight">
+              Best tools to manage your <span className="text-[#1E65FF]">gold jewellery</span> store
             </h2>
-            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 text-amber-600" /> BIS Certified
-            </span>
+            
+            <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-[#1E65FF]" />
+              {todayFormatted} • Hallmarked sales, customer KYC & payment installment tracking
+            </p>
           </div>
-          <p className="text-xs text-slate-500 flex items-center gap-2 mt-1">
-            <Calendar className="w-3.5 h-3.5 text-amber-600" />
-            {todayFormatted} • Welcome back, Store Manager
-          </p>
-        </div>
 
-        {/* Quick Action Buttons */}
-        <div className="flex items-center gap-2.5 flex-wrap w-full lg:w-auto">
-          <button
-            onClick={() => setIsNewSaleOpen(true)}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-xl text-xs shadow-xs transition-all duration-150"
-          >
-            <PlusCircle className="w-4 h-4" />
-            New Gold Sale
-          </button>
+          {/* Quick Action Pill Buttons */}
+          <div className="flex items-center gap-3 flex-wrap w-full lg:w-auto">
+            <button
+              onClick={() => setIsNewSaleOpen(true)}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1E65FF] hover:bg-[#1554E8] text-white font-bold rounded-full text-xs sm:text-sm shadow-[0_4px_16px_rgba(30,101,255,0.35)] hover:shadow-[0_6px_22px_rgba(30,101,255,0.45)] transition-all active:scale-[0.98]"
+            >
+              <PlusCircle className="w-4 h-4" />
+              New Gold Bill
+            </button>
 
-          <button
-            onClick={() => setIsAddPaymentOpen(true)}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-xs transition-all duration-150"
-          >
-            <Receipt className="w-4 h-4" />
-            Record Payment
-          </button>
+            <button
+              onClick={() => setIsAddPaymentOpen(true)}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-full text-xs sm:text-sm shadow-sm transition-all active:scale-[0.98]"
+            >
+              <Receipt className="w-4 h-4 text-brand-300" />
+              Record Payment
+            </button>
 
-          <button
-            onClick={() => setIsNewCustomerOpen(true)}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs border border-slate-200 transition-colors"
-          >
-            <UserPlus className="w-4 h-4 text-amber-600" />
-            Add Customer
-          </button>
+            <button
+              onClick={() => setIsNewCustomerOpen(true)}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 hover:bg-slate-200 text-navy-950 font-bold rounded-full text-xs sm:text-sm transition-colors"
+            >
+              <UserPlus className="w-4 h-4 text-[#1E65FF]" />
+              Add Customer
+            </button>
+          </div>
         </div>
       </div>
 

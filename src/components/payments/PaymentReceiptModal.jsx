@@ -28,7 +28,7 @@ export const PaymentReceiptModal = () => {
         <div className="flex justify-end no-print">
           <button
             onClick={handlePrint}
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2 bg-[#1E65FF] hover:bg-[#1554E8] text-white rounded-full text-xs font-bold shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-colors"
           >
             <Printer className="w-4 h-4" />
             Print Receipt Slip

@@ -582,17 +582,17 @@ export const NewSaleModal = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+        <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
           <button
             type="button"
             onClick={handleClose}
-            className="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-xl hover:bg-slate-100 transition-colors"
+            className="px-5 py-2.5 text-xs font-bold text-slate-600 hover:text-navy-950 rounded-full hover:bg-slate-100 transition-colors"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-xl shadow-xs transition-all duration-150"
+            className="px-6 py-2.5 text-xs font-bold text-white bg-[#1E65FF] hover:bg-[#1554E8] rounded-full shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-all active:scale-[0.98]"
           >
             Generate Invoice & Save Sale
           </button>

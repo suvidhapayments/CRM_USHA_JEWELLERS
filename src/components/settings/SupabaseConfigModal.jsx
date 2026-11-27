@@ -110,15 +110,15 @@ export const SupabaseConfigModal = () => {
             <button
               type="button"
               onClick={handleCopySchemaPath}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-100 border border-slate-300 transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-100 text-navy-950 hover:bg-slate-200 border border-slate-200 font-bold transition-colors"
             >
-              <Copy className="w-3.5 h-3.5 text-amber-700" />
+              <Copy className="w-3.5 h-3.5 text-[#1E65FF]" />
               {copiedSchema ? 'Copied supabase/schema.sql' : 'Copy SQL Schema Path'}
             </button>
 
             <button
               type="submit"
-              className="px-5 py-2 font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-xl shadow-xs transition-colors"
+              className="px-6 py-2.5 font-bold text-white bg-[#1E65FF] hover:bg-[#1554E8] rounded-full shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-all active:scale-[0.98]"
             >
               Save & Connect
             </button>
@@ -126,9 +126,9 @@ export const SupabaseConfigModal = () => {
         </form>
 
         {/* Database Management & Demo Data Reset */}
-        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between">
+        <div className="bg-[#F8FAFC] p-4 sm:p-5 rounded-2xl border border-slate-200/70 flex items-center justify-between">
           <div>
-            <h5 className="font-bold text-slate-900">Reset Sample Jewellery Data</h5>
+            <h5 className="font-extrabold text-navy-950">Reset Sample Jewellery Data</h5>
             <p className="text-slate-500 mt-0.5">
               Restores initial 6 jewellery customers, sales invoices, gold rates, and payment receipts.
             </p>
@@ -136,7 +136,7 @@ export const SupabaseConfigModal = () => {
           <button
             type="button"
             onClick={handleResetDemo}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-300 hover:border-rose-300 font-semibold transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white hover:bg-rose-50 text-slate-700 hover:text-rose-700 border border-slate-200 hover:border-rose-300 font-bold transition-colors"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             Reset Data

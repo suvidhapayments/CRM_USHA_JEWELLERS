@@ -18,9 +18,9 @@ export const KPICards = () => {
 
   if (!metrics || !metrics.kpis) {
     return (
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 animate-pulse">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 animate-pulse">
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="h-28 sm:h-32 bg-slate-200/60 rounded-2xl" />
+          <div key={i} className="h-32 bg-slate-200/50 rounded-3xl" />
         ))}
       </div>
     );
@@ -29,7 +29,7 @@ export const KPICards = () => {
   const { kpis } = metrics;
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
       {/* 1. Total Customers */}
       <StatCard
         title="Total Customers"
@@ -46,11 +46,11 @@ export const KPICards = () => {
       <StatCard
         title="Total Gold Sold"
         value={formatWeight(kpis.totalGoldSoldGrams)}
-        subtitle="22K & 24K"
+        subtitle="22K & 24K Hallmark"
         icon={Scale}
         accent="gold"
         trend="up"
-        trendValue="Volume"
+        trendValue="Net Weight"
         onClick={() => setActiveTab('sales')}
       />
 
@@ -58,11 +58,11 @@ export const KPICards = () => {
       <StatCard
         title="Total Sales"
         value={formatCurrency(kpis.totalSalesAmount)}
-        subtitle="Gross revenue"
+        subtitle="Gross revenue billed"
         icon={BadgeIndianRupee}
-        accent="purple"
+        accent="blue"
         trend="up"
-        trendValue="Billed"
+        trendValue="All Invoices"
         onClick={() => setActiveTab('sales')}
       />
 
@@ -82,11 +82,11 @@ export const KPICards = () => {
       <StatCard
         title="Outstanding"
         value={formatCurrency(kpis.totalOutstandingAmount)}
-        subtitle="Pending credit"
+        subtitle="Pending ledger balance"
         icon={AlertCircle}
         accent="rose"
         trend="down"
-        trendValue="Due"
+        trendValue="Balance Due"
         onClick={() => setActiveTab('customers')}
       />
 
@@ -106,7 +106,7 @@ export const KPICards = () => {
       <StatCard
         title="Today's Collections"
         value={formatCurrency(kpis.todayCollections)}
-        subtitle="Counter + RTGS"
+        subtitle="Cash + UPI + RTGS"
         icon={Banknote}
         accent="emerald"
         trend="up"

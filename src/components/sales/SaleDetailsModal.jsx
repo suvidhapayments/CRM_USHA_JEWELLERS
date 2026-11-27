@@ -40,13 +40,13 @@ export const SaleDetailsModal = () => {
     >
       <div className="space-y-6">
         {/* Print Bar */}
-        <div className="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200 no-print">
+        <div className="flex items-center justify-between bg-[#F8FAFC] p-3.5 rounded-2xl border border-slate-200/70 no-print">
           <div className="flex items-center gap-2 text-xs text-slate-600">
-            <span className="font-semibold text-slate-900">Status:</span>
+            <span className="font-bold text-navy-950">Status:</span>
             {sale.payment_status === 'paid' ? (
               <Badge variant="emerald">Payment Completed</Badge>
             ) : sale.payment_status === 'partial' ? (
-              <Badge variant="gold">Installment Ongoing (Balance: {formatCurrency(sale.balance_amount)})</Badge>
+              <Badge variant="brand">Installment Ongoing (Balance: {formatCurrency(sale.balance_amount)})</Badge>
             ) : (
               <Badge variant="rose">Payment Pending</Badge>
             )}
@@ -60,7 +60,7 @@ export const SaleDetailsModal = () => {
                   setActiveSaleDetails(null);
                   openAddPaymentForCustomer(customer, s);
                 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold shadow-xs transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold shadow-xs transition-colors"
               >
                 <Receipt className="w-3.5 h-3.5" />
                 Record Installment
@@ -68,7 +68,7 @@ export const SaleDetailsModal = () => {
             )}
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-5 py-2 bg-[#1E65FF] hover:bg-[#1554E8] text-white rounded-full text-xs font-bold shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-colors"
             >
               <Printer className="w-3.5 h-3.5" />
               Print Tax Bill

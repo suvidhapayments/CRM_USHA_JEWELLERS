@@ -65,9 +65,9 @@ export const CustomerDetailsModal = () => {
     >
       <div className="space-y-6">
         {/* Top Header Card */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-amber-50/60 border border-amber-200/80">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl bg-[#F8FAFC] border border-[#F1F4F9]">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white border-2 border-amber-300 flex-shrink-0 flex items-center justify-center shadow-xs">
+            <div className="w-16 h-16 rounded-2xl overflow-hidden bg-brand-50 border border-brand-100 flex-shrink-0 flex items-center justify-center shadow-xs">
               {selectedCustomer.photo_url ? (
                 <img
                   src={selectedCustomer.photo_url}
@@ -75,24 +75,24 @@ export const CustomerDetailsModal = () => {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <User className="w-8 h-8 text-amber-700" />
+                <User className="w-8 h-8 text-[#1E65FF]" />
               )}
             </div>
 
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                <h3 className="text-xl font-extrabold text-navy-950 tracking-tight">
                   {selectedCustomer.name}
                 </h3>
-                <Badge variant="gold">{selectedCustomer.customer_code}</Badge>
+                <Badge variant="brand">{selectedCustomer.customer_code}</Badge>
                 {hasOutstanding ? (
                   <Badge variant="rose">Balance Due</Badge>
                 ) : (
                   <Badge variant="emerald">Zero Balance</Badge>
                 )}
               </div>
-              <p className="text-xs text-slate-500 flex items-center gap-2 mt-1">
-                <Calendar className="w-3.5 h-3.5 text-amber-700" />
+              <p className="text-xs text-slate-500 flex items-center gap-2 mt-1 font-medium">
+                <Calendar className="w-3.5 h-3.5 text-[#1E65FF]" />
                 Customer since {formatDate(selectedCustomer.created_at)}
               </p>
             </div>
@@ -106,7 +106,7 @@ export const CustomerDetailsModal = () => {
                 setSelectedCustomer(null);
                 openNewSaleForCustomer(cust);
               }}
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-xl text-xs shadow-xs transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1E65FF] hover:bg-[#1554E8] text-white font-bold rounded-full text-xs shadow-[0_4px_14px_rgba(30,101,255,0.35)] transition-all active:scale-[0.98]"
             >
               <PlusCircle className="w-4 h-4" />
               New Sale
@@ -117,7 +117,7 @@ export const CustomerDetailsModal = () => {
                 setSelectedCustomer(null);
                 openAddPaymentForCustomer(cust);
               }}
-              className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs shadow-xs transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-navy-950 hover:bg-navy-900 text-white font-bold rounded-full text-xs shadow-xs transition-all active:scale-[0.98]"
             >
               <Receipt className="w-4 h-4" />
               Record Payment
@@ -127,7 +127,7 @@ export const CustomerDetailsModal = () => {
                 setEditingCustomer(selectedCustomer);
                 setSelectedCustomer(null);
               }}
-              className="p-2 text-slate-600 hover:text-slate-900 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 transition-colors"
+              className="p-2 text-slate-600 hover:text-navy-950 rounded-full bg-white hover:bg-slate-100 border border-slate-200/70 transition-colors"
               title="Edit Profile"
             >
               <Edit className="w-4 h-4" />
@@ -138,7 +138,7 @@ export const CustomerDetailsModal = () => {
                   handleDeleteCustomer(selectedCustomer.id);
                 }
               }}
-              className="p-2 text-rose-600 hover:text-rose-800 rounded-xl bg-white hover:bg-rose-50 border border-slate-200 transition-colors"
+              className="p-2 text-rose-600 hover:text-rose-800 rounded-full bg-white hover:bg-rose-50 border border-slate-200/70 transition-colors"
               title="Delete Customer"
             >
               <Trash2 className="w-4 h-4" />

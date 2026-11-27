@@ -24,21 +24,21 @@ export const RecentActivity = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* 1. Recent Sales Transactions */}
-      <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-xs flex flex-col justify-between">
+      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-5">
             <div>
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                <FileText className="w-4 h-4 text-amber-600" />
+              <h3 className="text-base sm:text-lg font-extrabold text-navy-950 flex items-center gap-2 tracking-tight">
+                <FileText className="w-5 h-5 text-[#1E65FF]" />
                 Recent Sales Transactions
               </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <p className="text-xs text-slate-500 mt-0.5 font-medium">
                 Latest gold jewellery bills generated
               </p>
             </div>
             <button
               onClick={() => setActiveTab('sales')}
-              className="text-xs font-semibold text-amber-700 hover:text-amber-800 inline-flex items-center gap-1 transition-colors"
+              className="text-xs font-bold text-[#1E65FF] hover:underline inline-flex items-center gap-1 transition-colors"
             >
               View All <ChevronRight className="w-3.5 h-3.5" />
             </button>
@@ -47,48 +47,48 @@ export const RecentActivity = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50/70 text-slate-500 uppercase tracking-wider font-semibold">
-                  <th className="py-2.5 px-3">Invoice</th>
-                  <th className="py-2.5 px-3">Customer</th>
-                  <th className="py-2.5 px-3 text-right">Gold Wt</th>
-                  <th className="py-2.5 px-3 text-right">Amount</th>
-                  <th className="py-2.5 px-3 text-center">Status</th>
-                  <th className="py-2.5 px-3 text-right">Bill</th>
+                <tr className="border-b border-slate-100 bg-[#F8FAFC] text-slate-500 uppercase tracking-wider font-bold">
+                  <th className="py-3 px-3.5 rounded-l-xl">Invoice</th>
+                  <th className="py-3 px-3.5">Customer</th>
+                  <th className="py-3 px-3.5 text-right">Gold Wt</th>
+                  <th className="py-3 px-3.5 text-right">Amount</th>
+                  <th className="py-3 px-3.5 text-center">Status</th>
+                  <th className="py-3 px-3.5 text-right rounded-r-xl">Bill</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {recentSales.map((sale) => (
-                  <tr key={sale.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-2.5 px-3 font-mono font-bold text-amber-800">
+                  <tr key={sale.id} className="hover:bg-[#F8FAFC] transition-colors">
+                    <td className="py-3 px-3.5 font-mono font-bold text-[#1E65FF]">
                       {sale.invoice_number}
                     </td>
-                    <td className="py-2.5 px-3">
-                      <p className="font-semibold text-slate-900 truncate max-w-[120px]">
+                    <td className="py-3 px-3.5">
+                      <p className="font-bold text-navy-950 truncate max-w-[130px]">
                         {sale.customer_name}
                       </p>
-                      <span className="text-[10px] text-slate-500 font-mono">
+                      <span className="text-[10px] text-slate-400 font-mono">
                         {formatDate(sale.sale_date)}
                       </span>
                     </td>
-                    <td className="py-2.5 px-3 text-right font-mono text-slate-700">
+                    <td className="py-3 px-3.5 text-right font-mono text-slate-700 font-semibold">
                       {formatWeight(sale.total_net_weight || sale.total_gross_weight)}
                     </td>
-                    <td className="py-2.5 px-3 text-right font-bold text-slate-900">
+                    <td className="py-3 px-3.5 text-right font-extrabold text-navy-950">
                       {formatCurrency(sale.final_amount)}
                     </td>
-                    <td className="py-2.5 px-3 text-center">
+                    <td className="py-3 px-3.5 text-center">
                       {sale.payment_status === 'paid' ? (
                         <Badge variant="emerald" size="sm">Paid</Badge>
                       ) : sale.payment_status === 'partial' ? (
-                        <Badge variant="gold" size="sm">Partial</Badge>
+                        <Badge variant="blue" size="sm">Partial</Badge>
                       ) : (
                         <Badge variant="rose" size="sm">Pending</Badge>
                       )}
                     </td>
-                    <td className="py-2.5 px-3 text-right">
+                    <td className="py-3 px-3.5 text-right">
                       <button
                         onClick={() => setActiveSaleDetails(sale)}
-                        className="text-slate-400 hover:text-slate-800 p-1 rounded hover:bg-slate-100 transition-colors"
+                        className="text-slate-400 hover:text-[#1E65FF] p-1.5 rounded-full hover:bg-brand-50 transition-colors"
                         title="View Tax Invoice"
                       >
                         <ArrowUpRight className="w-4 h-4" />
@@ -102,22 +102,22 @@ export const RecentActivity = () => {
         </div>
       </div>
 
-      {/* 2. Recent Payment Entries */}
-      <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-xs flex flex-col justify-between">
+      {/* 2. Recent Payments & Collections */}
+      <div className="bg-white border border-[#F1F4F9] rounded-3xl p-6 sm:p-7 shadow-[0_8px_30px_rgba(7,1,39,0.04)] flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-5">
             <div>
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                <Receipt className="w-4 h-4 text-emerald-600" />
+              <h3 className="text-base sm:text-lg font-extrabold text-navy-950 flex items-center gap-2 tracking-tight">
+                <Receipt className="w-5 h-5 text-emerald-600" />
                 Recent Payment Entries
               </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Installments and counter payment receipts
+              <p className="text-xs text-slate-500 mt-0.5 font-medium">
+                Latest customer installment collections
               </p>
             </div>
             <button
               onClick={() => setActiveTab('payments')}
-              className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 transition-colors"
+              className="text-xs font-bold text-[#1E65FF] hover:underline inline-flex items-center gap-1 transition-colors"
             >
               View All <ChevronRight className="w-3.5 h-3.5" />
             </button>
@@ -126,40 +126,41 @@ export const RecentActivity = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50/70 text-slate-500 uppercase tracking-wider font-semibold">
-                  <th className="py-2.5 px-3">Receipt No</th>
-                  <th className="py-2.5 px-3">Customer</th>
-                  <th className="py-2.5 px-3 text-right">Amount</th>
-                  <th className="py-2.5 px-3">Mode</th>
-                  <th className="py-2.5 px-3">Date</th>
-                  <th className="py-2.5 px-3 text-right">Slip</th>
+                <tr className="border-b border-slate-100 bg-[#F8FAFC] text-slate-500 uppercase tracking-wider font-bold">
+                  <th className="py-3 px-3.5 rounded-l-xl">Receipt</th>
+                  <th className="py-3 px-3.5">Customer</th>
+                  <th className="py-3 px-3.5 text-center">Mode</th>
+                  <th className="py-3 px-3.5 text-right">Amount</th>
+                  <th className="py-3 px-3.5 text-right rounded-r-xl">Receipt</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {recentPayments.map((p) => (
-                  <tr key={p.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-2.5 px-3 font-mono font-bold text-emerald-700">
-                      {p.receipt_number}
+                {recentPayments.map((payment) => (
+                  <tr key={payment.id} className="hover:bg-[#F8FAFC] transition-colors">
+                    <td className="py-3 px-3.5 font-mono font-bold text-navy-950">
+                      {payment.receipt_number}
                     </td>
-                    <td className="py-2.5 px-3 font-medium text-slate-900 truncate max-w-[130px]">
-                      {p.customer_name}
-                    </td>
-                    <td className="py-2.5 px-3 text-right font-mono font-bold text-emerald-700">
-                      {formatCurrency(p.amount)}
-                    </td>
-                    <td className="py-2.5 px-3 uppercase text-slate-700">
-                      <span className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] font-semibold">
-                        {p.payment_mode}
+                    <td className="py-3 px-3.5">
+                      <p className="font-bold text-navy-950 truncate max-w-[130px]">
+                        {payment.customer_name}
+                      </p>
+                      <span className="text-[10px] text-slate-400 font-mono">
+                        {formatDate(payment.payment_date)}
                       </span>
                     </td>
-                    <td className="py-2.5 px-3 text-slate-500">
-                      {formatDate(p.payment_date)}
+                    <td className="py-3 px-3.5 text-center">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-slate-100 text-slate-700">
+                        {payment.payment_mode}
+                      </span>
                     </td>
-                    <td className="py-2.5 px-3 text-right">
+                    <td className="py-3 px-3.5 text-right font-extrabold text-emerald-700">
+                      +{formatCurrency(payment.amount)}
+                    </td>
+                    <td className="py-3 px-3.5 text-right">
                       <button
-                        onClick={() => setActiveReceipt(p)}
-                        className="text-slate-400 hover:text-emerald-700 p-1 rounded hover:bg-slate-100 transition-colors"
-                        title="View Payment Receipt"
+                        onClick={() => setActiveReceipt(payment)}
+                        className="text-slate-400 hover:text-[#1E65FF] p-1.5 rounded-full hover:bg-brand-50 transition-colors"
+                        title="Print Receipt"
                       >
                         <ArrowUpRight className="w-4 h-4" />
                       </button>

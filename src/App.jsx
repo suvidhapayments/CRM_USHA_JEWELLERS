@@ -22,7 +22,7 @@ const MainContent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-slate-50 text-slate-800 font-sans">
+    <div className="flex min-h-screen bg-[#FBFBFD] text-navy-950 font-sans">
       {/* Sidebar Navigation */}
       <Sidebar
         isMobileOpen={isMobileMenuOpen}
@@ -36,8 +36,8 @@ const MainContent = () => {
         <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-24 lg:pb-8">
           {loading ? (
             <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
-              <div className="w-12 h-12 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin" />
-              <p className="text-sm font-semibold text-amber-700">Loading Usha Jewellers CRM...</p>
+              <div className="w-12 h-12 border-4 border-brand-100 border-t-[#1E65FF] rounded-full animate-spin" />
+              <p className="text-sm font-bold text-navy-950">Loading Usha Jewellers CRM...</p>
             </div>
           ) : (
             <>
