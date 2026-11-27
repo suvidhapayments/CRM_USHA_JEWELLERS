@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { DashboardOverview } from './components/dashboard/DashboardOverview';
 import { CustomerList } from './components/customers/CustomerList';
 import { CustomerFormModal } from './components/customers/CustomerFormModal';
@@ -32,7 +33,7 @@ const MainContent = () => {
       <div className="flex-1 flex flex-col min-w-0">
         <Header onOpenMobileMenu={() => setIsMobileMenuOpen(true)} />
 
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-24 lg:pb-8">
           {loading ? (
             <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
               <div className="w-12 h-12 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin" />
@@ -57,6 +58,9 @@ const MainContent = () => {
         <AddPaymentModal />
         <PaymentReceiptModal />
         <SupabaseConfigModal />
+
+        {/* Mobile App Bottom Navigation Bar */}
+        <MobileBottomNav onOpenMenu={() => setIsMobileMenuOpen(true)} />
 
         {/* Floating Toast */}
         <Toast />

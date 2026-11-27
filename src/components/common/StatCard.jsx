@@ -44,35 +44,35 @@ export const StatCard = ({
   return (
     <div
       onClick={onClick}
-      className={`group relative bg-white border border-slate-200/90 rounded-2xl p-5 shadow-xs transition-all duration-200 hover:shadow-md ${style.border} ${onClick ? 'cursor-pointer hover:-translate-y-0.5' : ''}`}
+      className={`group relative bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-5 shadow-2xs transition-all duration-200 hover:shadow-md ${style.border} ${onClick ? 'cursor-pointer hover:-translate-y-0.5' : ''}`}
     >
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-xs font-semibold tracking-wider uppercase text-slate-500">
+      <div className="flex items-start justify-between gap-1">
+        <div className="min-w-0 flex-1">
+          <p className="text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-slate-500 truncate">
             {title}
           </p>
-          <h3 className="text-2xl font-bold text-slate-900 mt-1.5 tracking-tight">
+          <h3 className="text-base sm:text-2xl font-bold text-slate-900 mt-1 tracking-tight truncate">
             {value}
           </h3>
         </div>
-        <div className={`p-3 rounded-xl ${style.iconBg} transition-transform duration-200 group-hover:scale-105`}>
-          {Icon && <Icon className="w-5 h-5" />}
+        <div className={`p-2 sm:p-3 rounded-xl ${style.iconBg} transition-transform duration-200 group-hover:scale-105 flex-shrink-0`}>
+          {Icon && <Icon className="w-4 h-4 sm:w-5 sm:h-5" />}
         </div>
       </div>
 
       {(subtitle || trend) && (
-        <div className="flex items-center gap-2 mt-3 pt-3 border-t border-slate-100 text-xs">
+        <div className="flex items-center gap-1.5 mt-2.5 pt-2.5 border-t border-slate-100 text-[11px] sm:text-xs">
           {trend && (
             <span
-              className={`inline-flex items-center gap-0.5 font-semibold ${
+              className={`inline-flex items-center gap-0.5 font-semibold flex-shrink-0 ${
                 trend === 'up' ? 'text-emerald-700' : 'text-rose-700'
               }`}
             >
-              {trend === 'up' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
+              {trend === 'up' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
               {trendValue}
             </span>
           )}
-          {subtitle && <span className="text-slate-500">{subtitle}</span>}
+          {subtitle && <span className="text-slate-500 truncate hidden xs:inline">{subtitle}</span>}
         </div>
       )}
     </div>

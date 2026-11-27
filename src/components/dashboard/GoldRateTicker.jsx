@@ -39,58 +39,68 @@ export const GoldRateTicker = () => {
     <>
       <div className="bg-gradient-to-r from-amber-50/90 via-white to-amber-50/90 border border-amber-200/90 rounded-2xl p-4 shadow-2xs">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-amber-100 text-amber-800 border border-amber-300">
-              <Sparkles className="w-5 h-5 text-amber-600" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
-                  Today's Live Bullion Board
-                </span>
-                <span className="inline-flex items-center gap-1 text-[10px] bg-white text-slate-600 px-2 py-0.5 rounded-full border border-slate-200 font-medium">
-                  <Clock className="w-3 h-3 text-amber-600" />
-                  Updated {rates?.last_updated || 'Today'}
-                </span>
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="p-2 sm:p-2.5 rounded-xl bg-amber-100 text-amber-800 border border-amber-300">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
               </div>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Market benchmark for hallmarked gold jewellery & coin sales
-              </p>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
+                    Live Bullion Board
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[10px] bg-white text-slate-600 px-2 py-0.5 rounded-full border border-slate-200 font-medium">
+                    <Clock className="w-2.5 h-2.5 text-amber-600" />
+                    {rates?.last_updated || 'Today'}
+                  </span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-0.5">
+                  Today's hallmark bullion rates
+                </p>
+              </div>
             </div>
+
+            <button
+              onClick={handleOpenModal}
+              className="md:hidden inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-slate-50 text-amber-800 rounded-lg text-xs font-semibold border border-amber-300 transition-colors shadow-2xs"
+            >
+              <Edit3 className="w-3 h-3 text-amber-600" />
+              Edit
+            </button>
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap w-full md:w-auto justify-between md:justify-end">
-            <div className="text-center sm:text-right">
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">24K Gold (999)</span>
-              <span className="text-base font-bold font-mono text-amber-800">
-                ₹{Number(rates?.karat_24k || 7850).toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/g</span>
+          <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-6 w-full md:w-auto justify-between md:justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-amber-200/60">
+            <div className="bg-white/80 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-amber-200/50 text-left sm:text-right">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block">24K (999)</span>
+              <span className="text-sm sm:text-base font-bold font-mono text-amber-800">
+                ₹{Number(rates?.karat_24k || 7850).toLocaleString('en-IN')}<span className="text-[10px] font-normal text-slate-500">/g</span>
               </span>
             </div>
 
-            <div className="text-center sm:text-right">
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">22K Gold (916)</span>
-              <span className="text-base font-bold font-mono text-slate-900">
-                ₹{Number(rates?.karat_22k || 7200).toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/g</span>
+            <div className="bg-white/80 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-amber-200/50 text-left sm:text-right">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block">22K (916)</span>
+              <span className="text-sm sm:text-base font-bold font-mono text-slate-900">
+                ₹{Number(rates?.karat_22k || 7200).toLocaleString('en-IN')}<span className="text-[10px] font-normal text-slate-500">/g</span>
               </span>
             </div>
 
-            <div className="text-center sm:text-right">
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">18K Gold (750)</span>
-              <span className="text-base font-bold font-mono text-slate-800">
-                ₹{Number(rates?.karat_18k || 5900).toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/g</span>
+            <div className="bg-white/80 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-amber-200/50 text-left sm:text-right">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block">18K (750)</span>
+              <span className="text-sm sm:text-base font-bold font-mono text-slate-800">
+                ₹{Number(rates?.karat_18k || 5900).toLocaleString('en-IN')}<span className="text-[10px] font-normal text-slate-500">/g</span>
               </span>
             </div>
 
-            <div className="text-center sm:text-right">
-              <span className="text-[10px] uppercase font-bold text-slate-400 block">Fine Silver</span>
-              <span className="text-base font-bold font-mono text-slate-800">
-                ₹{Number(rates?.silver_rate || 92).toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-500">/g</span>
+            <div className="bg-white/80 sm:bg-transparent p-2 sm:p-0 rounded-xl border sm:border-0 border-amber-200/50 text-left sm:text-right">
+              <span className="text-[10px] uppercase font-bold text-slate-400 block">Silver</span>
+              <span className="text-sm sm:text-base font-bold font-mono text-slate-800">
+                ₹{Number(rates?.silver_rate || 92).toLocaleString('en-IN')}<span className="text-[10px] font-normal text-slate-500">/g</span>
               </span>
             </div>
 
             <button
               onClick={handleOpenModal}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 text-amber-800 rounded-xl text-xs font-semibold border border-amber-300 transition-colors shadow-2xs ml-auto md:ml-0"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 text-amber-800 rounded-xl text-xs font-semibold border border-amber-300 transition-colors shadow-2xs ml-auto md:ml-0"
             >
               <Edit3 className="w-3.5 h-3.5 text-amber-600" />
               Change Rates
@@ -117,7 +127,7 @@ export const GoldRateTicker = () => {
               step="any"
               value={formRates.karat_24k}
               onChange={(e) => setFormRates({ ...formRates, karat_24k: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white text-base sm:text-sm"
               required
             />
           </div>
@@ -131,7 +141,7 @@ export const GoldRateTicker = () => {
               step="any"
               value={formRates.karat_22k}
               onChange={(e) => setFormRates({ ...formRates, karat_22k: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white text-base sm:text-sm"
               required
             />
           </div>
@@ -145,7 +155,7 @@ export const GoldRateTicker = () => {
               step="any"
               value={formRates.karat_18k}
               onChange={(e) => setFormRates({ ...formRates, karat_18k: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white text-base sm:text-sm"
               required
             />
           </div>
@@ -159,7 +169,7 @@ export const GoldRateTicker = () => {
               step="any"
               value={formRates.silver_rate}
               onChange={(e) => setFormRates({ ...formRates, silver_rate: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white"
+              className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-mono font-bold focus:outline-none focus:border-amber-500 focus:bg-white text-base sm:text-sm"
               required
             />
           </div>

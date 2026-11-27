@@ -18,9 +18,9 @@ export const KPICards = () => {
 
   if (!metrics || !metrics.kpis) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-pulse">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 animate-pulse">
         {[...Array(8)].map((_, i) => (
-          <div key={i} className="h-32 bg-slate-800/40 rounded-2xl border border-slate-800" />
+          <div key={i} className="h-28 sm:h-32 bg-slate-200/60 rounded-2xl" />
         ))}
       </div>
     );
@@ -29,16 +29,16 @@ export const KPICards = () => {
   const { kpis } = metrics;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
       {/* 1. Total Customers */}
       <StatCard
         title="Total Customers"
         value={kpis.totalCustomers}
-        subtitle="Registered jewellery buyers"
+        subtitle="Registered buyers"
         icon={Users}
         accent="blue"
         trend="up"
-        trendValue="+12% this mo"
+        trendValue="+12%"
         onClick={() => setActiveTab('customers')}
       />
 
@@ -46,23 +46,23 @@ export const KPICards = () => {
       <StatCard
         title="Total Gold Sold"
         value={formatWeight(kpis.totalGoldSoldGrams)}
-        subtitle="Hallmarked 22K & 24K"
+        subtitle="22K & 24K"
         icon={Scale}
         accent="gold"
         trend="up"
-        trendValue="Active weight"
+        trendValue="Volume"
         onClick={() => setActiveTab('sales')}
       />
 
       {/* 3. Total Sales Amount (₹) */}
       <StatCard
-        title="Total Sales Amount"
+        title="Total Sales"
         value={formatCurrency(kpis.totalSalesAmount)}
-        subtitle="Gross revenue billed"
+        subtitle="Gross revenue"
         icon={BadgeIndianRupee}
         accent="purple"
         trend="up"
-        trendValue="Cumulative"
+        trendValue="Billed"
         onClick={() => setActiveTab('sales')}
       />
 
@@ -70,23 +70,23 @@ export const KPICards = () => {
       <StatCard
         title="Total Received"
         value={formatCurrency(kpis.totalAmountReceived)}
-        subtitle="Cleared payments & cash"
+        subtitle="Cleared payments"
         icon={Receipt}
         accent="emerald"
         trend="up"
-        trendValue="86.7% realized"
+        trendValue="86.7%"
         onClick={() => setActiveTab('payments')}
       />
 
       {/* 5. Total Outstanding Amount (₹) */}
       <StatCard
-        title="Total Outstanding"
+        title="Outstanding"
         value={formatCurrency(kpis.totalOutstandingAmount)}
-        subtitle="Pending customer balances"
+        subtitle="Pending credit"
         icon={AlertCircle}
         accent="rose"
         trend="down"
-        trendValue="Installments due"
+        trendValue="Due"
         onClick={() => setActiveTab('customers')}
       />
 
@@ -98,7 +98,7 @@ export const KPICards = () => {
         icon={TrendingUp}
         accent="gold"
         trend="up"
-        trendValue="Active today"
+        trendValue="Today"
         onClick={() => setActiveTab('sales')}
       />
 
@@ -106,23 +106,23 @@ export const KPICards = () => {
       <StatCard
         title="Today's Collections"
         value={formatCurrency(kpis.todayCollections)}
-        subtitle="Received today"
+        subtitle="Counter + RTGS"
         icon={Banknote}
         accent="emerald"
         trend="up"
-        trendValue="Counter + RTGS"
+        trendValue="Collected"
         onClick={() => setActiveTab('payments')}
       />
 
       {/* 8. Total Pending Payments */}
       <StatCard
-        title="Pending Invoices"
+        title="Pending Bills"
         value={`${kpis.totalPendingPaymentsCount} Bills`}
-        subtitle={`${formatCurrency(kpis.totalPendingPaymentsAmount)} payable`}
+        subtitle={`${formatCurrency(kpis.totalPendingPaymentsAmount)}`}
         icon={Clock}
         accent="rose"
         trend="down"
-        trendValue="Needs follow-up"
+        trendValue="Follow-up"
         onClick={() => setActiveTab('sales')}
       />
     </div>
